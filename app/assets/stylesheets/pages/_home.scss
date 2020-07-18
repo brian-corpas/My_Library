@@ -1,8 +1,11 @@
 // Specific CSS for your home-page
+
+
 #title {
   margin-top: 50px;
   text-align: center;
   color: #99B898;
+  font-family: 'Raleway', sans-serif;
 }
 
 .banner {
@@ -24,4 +27,8 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.html{
+  background-color: #EEEEEE
 }
