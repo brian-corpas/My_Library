@@ -1,0 +1,10 @@
+<%= form_tag books_path, method: :get, class: "search-bar" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a book"
+  %>
+  <%= hidden_field_tag :lat, '', id: 'search_lat' %>
+  <%= hidden_field_tag :lng, '', id: 'search_lng' %>
+  <%= submit_tag "SEARCH", class: "btn-green" %>
+<% end %>
