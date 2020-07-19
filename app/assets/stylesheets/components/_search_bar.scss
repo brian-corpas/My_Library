@@ -1,0 +1,55 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+  width: 30vw;
+  .btn-green {
+    border: none;
+    margin-left: 5px;
+  }
+}
+
+.form-control.ap-input {
+  height: 100%;
+  margin-right: 10px;
+  padding: 11px;
+}
+
+@media (max-width: 1070px) {
+  .search-bar {
+    display: block;
+    width: 75%;
+    input.btn-green {
+      margin-top: 5px;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+
+.product-search-bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .btn-green {
+    border: none;
+    margin-left: 5px;
+    text-align: center;
+    text-indent: -4px;
+  }
+}
+
+.product-search-bar-title {
+  h6 {
+  text-align: center;
+  }
+}
+
+.producer-search-bar-container {
+  min-width: 100%;
+}
+
+
+
+
+
