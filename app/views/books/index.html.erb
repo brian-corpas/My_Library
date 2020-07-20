@@ -1,12 +1,14 @@
 <div class="card-product">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
-    <ul>
-    <% @books.each do |book| %>
-    <h2><%= book.name %></h2>
-    <h4><%= book.author %></h4>
+    <% if user_signed_in? %>
+      <ul>
+        <% @books.each do |book| %>
+          <h2><%= book.name %></h2>
+          <h4><%= book.author %></h4>
+        <% end %>
+      </ul>
     <% end %>
-    </ul>
   </div>
 
 </div>
