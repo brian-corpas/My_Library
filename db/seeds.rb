@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Book.destroy_all
+
 
 puts "Creating books..."
 

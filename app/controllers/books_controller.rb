@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+ skip_before_action :verify_authenticity_token
 
   def index
     @books = Book.all
@@ -15,6 +16,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
+      flash[:notice] = 'Book added to Library'
       redirect_to books_path
     else
       render "new"
@@ -22,10 +24,11 @@ class BooksController < ApplicationController
   end
 
   def edit
-
+    @book = Book.find(params[:id])
   end
 
   def update
+    @book = Book.find(params[:id])
     if @book.update(book_params)
       redirect_to books_path
     else
