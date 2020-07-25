@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_07_25_104724) do
   create_table "books", force: :cascade do |t|
     t.string "name"
     t.string "author"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_books_on_user_id"
