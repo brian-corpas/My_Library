@@ -2,23 +2,26 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = User.find(params[:user_id])
-    @books = Book.all
+    @books = policy_scope(Book).order(created_at: :asc)
+
   end
 
   def show
     @book = Book.find(params[:id])
+    authorize @book
   end
 
   def new
     @user = User.find(params[:user_id])
     @book = Book.new
+    authorize @book
   end
 
   def create
     @user = User.find(params[:user_id])
     @book = Book.new(book_params)
     @book.user = @user
+    authorize @book
     if @book.save
       redirect_to user_books_path
       flash[:notice] = 'Success. Your book was added to the Library'
@@ -32,15 +35,18 @@ class BooksController < ApplicationController
   def edit
     @user = User.find(params[:user_id])
     @book = Book.find(params[:id])
+    authorize @book
   end
 
   def update
+    authorize @book
     @book = Book.find(params[:id])
     @book.update(book_params)
     redirect_to user_books_path
   end
 
   def destroy
+    authorize @book
     @book = Book.find(params[:id])
     @book.destroy
 
