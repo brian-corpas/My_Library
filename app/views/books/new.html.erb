@@ -7,6 +7,7 @@
     <%= simple_form_for [@user, @book] do |f| %>
       <%= f.input :title, label: "TITLE" %>
       <%= f.input :author, label: "AUTHOR"%>
+      <%= f.input :photo, as: :file %>
       <div class="row d-flex justify-content-center">
         <div class="col-align-self-center">
           <div style="margin-top: 20%">
