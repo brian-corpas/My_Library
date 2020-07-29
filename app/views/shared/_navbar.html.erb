@@ -8,12 +8,16 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-      <li class="d-flex justify-content-sm-center">
-        <h6><%="Welcome, #{current_user.email}!"%></h6>
-      </li>
+        <div>
+          <li class="d-flex justify-content-start">
+            <h6><%="Welcome, #{current_user.email}!"%></h6>
+          </li>
+        </div>
+
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
