@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 puts "Creating books..."
 
 book = Book.create!(
@@ -20,7 +21,6 @@ book = Book.create!(
 user_id: user.id,
 title: 'Coders: Who They are, What They Think and How They Are Changing Our World',
 author: 'Clive Thompson'
-
 )
 
 

@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_07_28_142020) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
+
     t.string "title"
     t.string "author"
     t.bigint "user_id", null: false
@@ -23,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_142020) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_books_on_user_id"
   end
+
 
   create_table "loans", force: :cascade do |t|
     t.string "name"
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_142020) do
     t.index ["book_id"], name: "index_loans_on_book_id"
     t.index ["user_id"], name: "index_loans_on_user_id"
   end
+
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -50,4 +55,5 @@ ActiveRecord::Schema.define(version: 2020_07_28_142020) do
   add_foreign_key "books", "users"
   add_foreign_key "loans", "books"
   add_foreign_key "loans", "users"
+
 end
