@@ -7,9 +7,6 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <% if book.photo.attached? %>
-                  <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag book.photo.key, height: 170, width: 120, crop: :thumb %></div>
-                <% end %>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -18,13 +15,7 @@
                 </div>
               </div>
             </div>
-              <div class="d-flex justify-content-around">
-                <%= link_to "Delete",
-                  book_path(book),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-                <%= link_to "Update", edit_book_path(book) %>
-              </div>
+
           </div>
           <% end %>
       </div>
@@ -43,14 +34,6 @@
 </div>
 
 
-<div class="card">
-  <div class="card-body">
-    <% @books.order('title ASC').each do |book| %>
-     <%= book.title %>
-     <%= book.author %>
-   <% end %>
-  </div>
-</div>
 
 
 
