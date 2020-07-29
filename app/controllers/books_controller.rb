@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
- skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!
 
   def index
+    @user = User.find(params[:user_id])
     @books = Book.all
   end
 
@@ -10,37 +11,45 @@ class BooksController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @book = Book.new
   end
 
   def create
+    @user = User.find(params[:user_id])
     @book = Book.new(book_params)
+    @book.user = @user
     if @book.save
-      flash[:notice] = 'Book added to Library'
-      redirect_to books_path
+      redirect_to user_books_path
+      flash[:notice] = 'Success. Your book was added to the Library'
     else
       render "new"
+      flash[:notice] = 'Book not created. Please try again'
+
     end
   end
 
   def edit
+    @user = User.find(params[:user_id]
     @book = Book.find(params[:id])
   end
 
   def update
     @book = Book.find(params[:id])
-    if @book.update(book_params)
-      redirect_to books_path
-    else
-      render "edit"
-    end
+    @book.update(book_params)
+    redirect_to user_books_path
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
 
+    redirect_to user_books_path
+  end
 
   private
 
   def book_params
-    params.require(:book).permit(:name, :author)
+    params.require(:book).permit(:title, :author)
   end
 end
