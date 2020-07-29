@@ -46,10 +46,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    authorize @book
     @book = Book.find(params[:id])
     @book.destroy
-
+    authorize @book
     redirect_to user_books_path
   end
 

@@ -8,15 +8,11 @@ class BookPolicy < ApplicationPolicy
       record.user == user
     end
 
-    def new?
-      true
-    end
-
     def show?
       true
     end
 
-    def edit?
+    def new?
       true
     end
 
@@ -24,8 +20,12 @@ class BookPolicy < ApplicationPolicy
       true
     end
 
+    def edit?
+      true
+    end
+
     def update?
-      record.user == user
+      true
     end
 
     def destroy?

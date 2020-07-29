@@ -20,7 +20,7 @@
                   user_book_path(current_user.id, book),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
-                <%= link_to "Update", edit_user_book_path(current_user.id, book) %>
+                  <%= link_to "Update", edit_user_book_path(current_user.id, book) %>
               </div>
           </div>
           <% end %>
