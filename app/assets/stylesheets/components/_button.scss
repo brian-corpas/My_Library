@@ -1,0 +1,52 @@
+.btn-main {
+  color: $gray;
+  border: 2px solid $gray;
+  padding: 8px 24px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  letter-spacing: 4px;
+  font-weight: Semi-bold;
+  border-radius: 4px;
+}
+
+.btn-main:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $black;
+  border: 2px solid $black;
+  border-radius: 4px;
+}
+
+// .btn-green {
+//   color: $green;
+//   border: 1.5px solid $green;
+//   padding: 8px 24px;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+//   letter-spacing: 4px;
+//   font-weight: Semi-bold;
+// }
+
+// .btn-green:hover {
+//   opacity: 1;
+//   text-decoration: none;
+//   color: black;
+//   border: 2px solid $green-hover;
+//   color: $green-hover;
+// }
+
+
+.btn-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #B5CA8D;
+  transition: background 0.3s ease;
+  letter-spacing: 4px;
+  font-weight: Semi-bold;
+}
+
+.btn-green:hover {
+  background: #8BB174;
+  color: white;
+}

@@ -2,8 +2,12 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @books = policy_scope(Book).order(created_at: :asc)
-
+    @books = policy_scope(Book)
+    unless params[:term].present?
+      @books = Book.all
+    else
+      @books = Book.search_by_full_name(params[:term])
+    end
   end
 
   def show
