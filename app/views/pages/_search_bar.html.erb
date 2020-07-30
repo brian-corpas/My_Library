@@ -1,10 +1,6 @@
 <%= form_tag user_books_path(:user_id), method: :get, class: "search-bar" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a Book"
-  %>
-  <%= hidden_field_tag :lat, '', id: 'search_lat' %>
-  <%= hidden_field_tag :lng, '', id: 'search_lng' %>
-  <%= submit_tag "SEARCH", class: "btn-green" %>
+  <%= text_field_tag 'term', params[:term], placeholder: "Enter book or author name" %>
+  <br>
+  <br>
+  <%= submit_tag "SEARCH", class: "btn-main" %>
 <% end %>
