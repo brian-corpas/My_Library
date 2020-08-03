@@ -2,6 +2,7 @@ class LoansController < ApplicationController
 
   def index
     @loans = policy_scope(Loan)
+    @book.loan_status = true
   end
 
   def new

@@ -20,7 +20,7 @@
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <u><%="#{current_user.email}"%></u>
                     <%= link_to "Bookshelf", user_books_path(current_user.id), class: "dropdown-item" %>
-
+                    <%= link_to "Loans", user_book_loans_path(current_user.id, @book), class: "dropdown-item"  %>
                     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                   </div>
                 </li>
