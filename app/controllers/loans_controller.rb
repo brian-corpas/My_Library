@@ -2,6 +2,7 @@ class LoansController < ApplicationController
 
   def index
     @books = policy_scope(Book)
+    @loans = policy_scope(Loan)
   end
 
   def new
@@ -26,11 +27,14 @@ class LoansController < ApplicationController
   end
 
   def destroy
-    @loan = Loan.find(params[:loan_id])
-    @loan.destroy
-    @book.loan_status = false
+    @loan = Loan.find(params[:id])
     authorize @loan
-    redirect_to user_books_path
+    if @loan.destroy
+      redirect_to user_books_path
+      flash[:notice] = 'Book returned!'
+    else
+      flash[:notice] = 'Book still not returned!'
+    end
   end
 
 
