@@ -7,6 +7,7 @@ class BooksController < ApplicationController
     else
       @books = policy_scope(Book)
       @books = Book.search_by_full_name(params[:term])
+      authorize @loan
     end
   end
 
