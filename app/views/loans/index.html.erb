@@ -3,11 +3,17 @@
 <br>
 
 <div class="container">
+  <h3 class="row d-flex justify-content-center"><u>LOANS</u></h3>
     <div class="row w-100">
       <div class="col-xs-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 p-0">
-         <% @loans.each do |loan| %>
+         <% @loans.order('created_at DESC').each do |loan| %>
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
+              <div class="col-md-4">
+                <% if loan.book.photo.attached? %>
+                  <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag loan.book.photo.key, height: 170, width: 120, crop: :thumb %></div>
+                <% end %>
+              </div>
               <div class="col-md-8">
 
                 <div class="card-body">
