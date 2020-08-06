@@ -11,10 +11,16 @@
   -->
   <div class="banner-container">
     <% if user_signed_in? %>
-      <h3><%="Welcome #{current_user.email}"%></h3>
+      <h4><strong><%="Welcome #{current_user.email}"%></strong></h4>
     <% end %>
     <br>
     <h1>MY LIBRARY</h1>
+    <% if current_user.books.count == 0 %>
+       <p>You have no books on the library</p>
+    <% else %>
+       <p>Books:<%= current_user.books.count %></p>
+    <% end %>
+      <br>
         <%= render "search_bar" %>
   </div>
 </div>
