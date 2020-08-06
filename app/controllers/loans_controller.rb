@@ -15,9 +15,9 @@ class LoansController < ApplicationController
     @book = Book.find(params[:book_id])
     @loan = Loan.new(loan_params)
     @loan.book = @book
+    @book.loan_status = 'loan'
     authorize @loan
     if @loan.save
-      @book.loan_status = true
       redirect_to user_books_path
       flash[:notice] = 'Success. Your book was loaned!'
     else
