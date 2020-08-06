@@ -15,11 +15,7 @@
     <% end %>
     <br>
     <h1>MY LIBRARY</h1>
-    <% if current_user.books.count == 0 %>
-       <p>You have no books on the library</p>
-    <% else %>
        <p>Books:<%= current_user.books.count %></p>
-    <% end %>
       <br>
         <%= render "search_bar" %>
   </div>
