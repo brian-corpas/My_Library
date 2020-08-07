@@ -1,6 +1,7 @@
      <div class="bookcards">
       <% @books.order('title ASC').each do |book| %>
             <div class="card mb-3" style="max-width: 540px;">
+               <div class="backgroundcard">
               <div class="row no-gutters">
                 <div class="col-md-4">
                   <% if book.photo.attached? %>
@@ -15,7 +16,6 @@
                 </div>
               </div>
               <div class="d-flex justify-content-around">
-
                   <%= link_to "Delete",
                     user_book_path(current_user.id, book), class: "btn btn-ghost-danger",
                     method: :delete,
@@ -23,7 +23,8 @@
                     <%= link_to "Update", edit_user_book_path(current_user.id, book), class: "btn btn-ghost" %></button>
                     <%= link_to "Loan", new_user_book_loan_path(current_user.id, book, @loan), class: "btn btn-ghost" %></button>
                 </div>
-            </div>
+             </div>
+             </div>
             <% end %>
         </div>
       </div>
