@@ -17,7 +17,7 @@ class LoansController < ApplicationController
     @loan.book = @book
     authorize @loan
     if @loan.save
-      @loan.book.loan_status = 'loan'
+      @book.loan_status = 'loan'
       redirect_to user_books_path
       flash[:notice] = 'Success. Your book was loaned!'
     else
