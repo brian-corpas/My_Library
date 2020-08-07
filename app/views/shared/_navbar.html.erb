@@ -12,6 +12,9 @@
                 <%= link_to "Home", root_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
+                <%= link_to "Bookshelf", user_books_path(current_user.id), class: "nav-link" %>
+              </li>
+              <li class="nav-item">
                 <%= link_to "New Book", new_user_book_path(current_user.id), class: "nav-link" %>
               </li>
               <ul class="nav navbar-nav navbar-right">
