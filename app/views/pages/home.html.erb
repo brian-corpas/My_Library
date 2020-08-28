@@ -11,7 +11,11 @@
   -->
   <div class="banner-container">
     <% if user_signed_in? %>
-      <h4><strong><%="Welcome #{current_user.email}"%></strong></h4>
+     <% if current_user.first_name.present? %>
+       <h4><strong><%= "Welcome #{current_user.first_name.capitalize}" %></strong></h4>
+     <% else %>
+       <h4><strong><%="Welcome #{current_user.email}"%></strong></h4>
+     <% end %>
       <p>Books: <%= current_user.books.count %></p>
     <% end %>
     <br>
