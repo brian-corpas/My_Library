@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-
 }
 
 @media(max-width: 992px) {
@@ -17,7 +16,7 @@
   .bookcards {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 1em;
+    padding: 3em;
     grid-row-gap: 30px;
   }
   .card-img-top {
