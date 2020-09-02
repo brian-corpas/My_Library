@@ -46,7 +46,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.update(book_params)
     authorize @book
-    redirect_to user_books_path
+    redirect_to user_book_path
   end
 
   def destroy
@@ -59,6 +59,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :photo)
+    params.require(:book).permit(:title, :author, :photo, :comments)
   end
 end
