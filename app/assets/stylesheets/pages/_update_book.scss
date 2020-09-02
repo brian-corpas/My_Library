@@ -1,0 +1,7 @@
+@media only screen and (max-width: 768px) {
+.update_book {
+  grid-template-columns: 1fr;
+  padding: 3em;
+  grid-row-gap: 30px;
+}
+}

@@ -23,6 +23,12 @@
   display: flex;
   justify-content: center;
 }
+
+.bookcards_show {
+   grid-template-columns: 1fr;
+   padding: 3em;
+   grid-row-gap: 30px;
+}
 }
 
 .backgroundcard {
