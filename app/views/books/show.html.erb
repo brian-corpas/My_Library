@@ -26,22 +26,23 @@
              </div>
              </div>
         </div>
-      </div>
-    </div>
-   </div>
-
-    <div class="container mt-2">
-      <div class="row d-flex justify-content-center">
-        <div class="col-align-self-center">
-          <% if @book.comments.present? %>
-          <h6><strong>Notes:</strong></h6>
-            <p><%= @book.comments %></p>
-          <% else %>
-            <h5>To leave a comment, update book information</h5>
-          <% end %>
+         <div class="container mt-2">
+           <div class="row d-flex justify-content-center">
+             <div class="col-align-self-center">
+               <% if @book.comments.present? %>
+                 <h6><strong>Notes:</strong></h6>
+                 <p><%= @book.comments %></p>
+               <% else %>
+                 <h6>To leave a comment, update book information</h6>
+              <% end %>
         </div>
       </div>
     </div>
+   </div>
+  </div>
+</div>
+
+
 
 
 <div class="container mt-2">
