@@ -9,7 +9,12 @@
     <%= simple_form_for [@user, @book] do |f| %>
       <%= f.input :title, label: "TITLE" %>
       <%= f.input :author, label: "AUTHOR"%>
-      <%= f.input :photo, as: :file %>
+
+      <div class="cover-preview">
+      <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload book cover' %>
+      <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
+     </div>
+
       <%= f.input :comments, :as => :text, label: "Leave your notes on the book here", input_html: {style: 'height:100px;'} %>
 
       <div class="row d-flex justify-content-center">
