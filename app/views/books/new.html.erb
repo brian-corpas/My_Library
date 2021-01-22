@@ -11,10 +11,10 @@
       <%= f.input :title, label: "TITLE" %>
       <%= f.input :author, label: "AUTHOR"%>
 
-      <%= image_tag "", width: 200, class: "hidden", id: "photo-preview" %>
+     <div class="cover-preview">
       <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload book cover' %>
-
-
+      <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
+     </div>
 
 
       <div class="row d-flex justify-content-center">
