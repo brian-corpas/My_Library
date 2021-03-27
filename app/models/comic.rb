@@ -10,10 +10,5 @@ class Comic < ApplicationRecord
 
   include PgSearch::Model
 
-  pg_search_scope :search_by_full_name, against: [:title, :colection],
-    using: {
-      tsearch: {
-        prefix: true
-      }
-    }
+  multisearchable against: [:title, :colection]
 end
