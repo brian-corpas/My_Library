@@ -1,24 +1,25 @@
 class LoansController < ApplicationController
 
   def index
+    @comics = policy_scope(Comic)
     @books = policy_scope(Book)
     @loans = policy_scope(Loan)
   end
 
   def new
     @book = Book.find(params[:book_id])
-    @loan = Loan.new
+    @loan = Loan.new 
     authorize @loan
   end
 
   def create
-    @book = Book.find(params[:book_id])
+    @book = Book.find(params[:book_id]) 
     @loan = Loan.new(loan_params)
-    @loan.book = @book
+    @loan.book = @book 
     authorize @loan
     if @loan.save
       @book.loan_status = 'loan'
-      redirect_to user_books_path
+      redirect_to root_path
       flash[:notice] = 'Success. Your book was loaned!'
     else
       render "new"
@@ -30,7 +31,7 @@ class LoansController < ApplicationController
     @loan = Loan.find(params[:id])
     authorize @loan
     if @loan.destroy
-      redirect_to user_books_path
+      redirect_to root_path
       flash[:notice] = 'Book returned!'
     else
       flash[:notice] = 'Book still not returned!'
@@ -43,5 +44,6 @@ class LoansController < ApplicationController
   def loan_params
     params.require(:loan).permit(:name, :date, :photo)
   end
+
 
 end

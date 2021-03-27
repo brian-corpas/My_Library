@@ -1,5 +1,6 @@
 class Loan < ApplicationRecord
   belongs_to :book
+  belongs_to :comic
 
   has_one_attached :photo
 

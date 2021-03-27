@@ -11,11 +11,17 @@
               <li class="nav-item active">
                 <%= link_to "Home", root_path, class: "nav-link" %>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <%= link_to "Bookshelf", user_books_path(current_user.id), class: "nav-link" %>
               </li>
               <li class="nav-item">
                 <%= link_to "New Book", new_user_book_path(current_user.id), class: "nav-link" %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to "Comics", user_comics_path(current_user.id), class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "New Comic", new_user_comic_path(current_user.id), class: "nav-link" %>
               </li>
               <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item dropdown navbar-avatar">
