@@ -1,7 +1,6 @@
 class LoansController < ApplicationController
 
   def index
-    @comics = policy_scope(Comic)
     @books = policy_scope(Book)
     @loans = policy_scope(Loan)
   end
@@ -19,7 +18,7 @@ class LoansController < ApplicationController
     authorize @loan
     if @loan.save
       @book.loan_status = 'loan'
-      redirect_to root_path
+      redirect_to user_books_path
       flash[:notice] = 'Success. Your book was loaned!'
     else
       render "new"
