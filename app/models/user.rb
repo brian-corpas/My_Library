@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
 
   has_many :books
+  has_many :comics
   has_many :loans, through: :books
   has_one_attached :photo
 end

@@ -37,7 +37,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'activestorage-cloudinary-service'
 gem 'pg_search'
-
+gem 'will_paginate', '~> 3.3.0'
 
 
 group :development, :test do
