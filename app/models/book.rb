@@ -9,5 +9,10 @@ class Book < ApplicationRecord
 
   include PgSearch::Model
 
-  multisearchable against: [:title, :author]
+  pg_search_scope :search_by_full_name, against: [:title, :author],
+    using: {
+      tsearch: {
+        prefix: true
+      }
+    }
 end
