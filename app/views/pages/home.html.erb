@@ -16,11 +16,16 @@
      <% else %>
        <h4><strong><%="Welcome #{current_user.email}"%></strong></h4>
      <% end %>
-      <p>Books: <%= current_user.books.count %></p>
+     
+    
     <% end %>
     <br>
     <h1>MY LIBRARY</h1>
       <br>
-        <%= render "search_bar" %>
+       <p>Books: <%= current_user.books.count %></p>
+        <%= render "book_search_bar" %>
+        <br>
+        <%#  <p>Comics: <%= current_user.comics.count %></p> %>
+        <%= render "comic_search_bar" %>
   </div>
 </div>
