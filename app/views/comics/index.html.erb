@@ -1,3 +1,4 @@
+
 <div class="bookcards">
       <% @comics.order('title ASC').each do |comic| %>
             <div class="card mb-3" style="max-width: 540px;">
@@ -12,7 +13,7 @@
                   <div class="card-body">
                    <a href="<%= user_comic_path(current_user.id, comic) %>" class="stretched-link"></a>
                     <h5 class="card-title"><strong>Title:</strong> <%= comic.title %></h5>
-                    <p class="card-text"><strong>Author:</strong> <%= comic.colection %></p>
+                    <p class="card-text"><strong>Colection:</strong> <%= comic.colection %></p>
                   </div>
                 </div>
               </div>
@@ -24,6 +25,7 @@
       </div>
     </div>
    </div>
+
 
 
 <div class="container mt-2">
