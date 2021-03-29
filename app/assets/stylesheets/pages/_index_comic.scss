@@ -1,5 +1,6 @@
 .sky {
     position:absolute;
+    background-repeat: repeat;
     width:100%;
     background: #4B79A1;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #283E51, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
@@ -10,6 +11,7 @@
   
   .stars {
     position:absolute;
+    background-repeat: repeat;
     top:0;
     left:0;
     right:0;

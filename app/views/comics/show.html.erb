@@ -3,33 +3,37 @@
   
  
  <div class="bookcards_show">
-         <div class="d-flex justify-content-center" style="margin-top: 15%">
-            <div class="card mb-3" style="max-width: 540px;">
-               <div class="backgroundcard">
-                 <div class="row no-gutters">
-                   <div class="col-md-4">
-                     <% if @comic.photo.attached? %>
-                      <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag @comic.photo.key, height: 170, width: 120, crop: :thumb %></div>
-                     <% end %>
-                   </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Title:</strong> <%= @comic.title %></h5>
-                    <p class="card-text"><strong>Colection:</strong> <%= @comic.colection %></p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex justify-content-around">
-                  <%= link_to "Delete",
+     
+        <div class="d-flex justify-content-center" style="margin-top: 5%">
+          <div class="row no-gutters">
+           <div class="col-md-4">
+        <% if @comic.photo.attached? %>
+           <div class="card-img-top d-flex justify-content-left mt-3 mb-2" style="margin-top: 5%"><%= cl_image_tag @comic.photo.key, height: 380, width: 270, crop: :thumb %></div>
+        <% end %>
+        </div>
+       </div>
+      </div>
+      <div class="container mt-2">
+        <div class="row d-flex justify-content-center">
+           <div class="col-align-self-center">
+              <h4 class="card-title"><strong>Title:</strong> <%= @comic.title %></h4>
+              <h6 class="card-text"><strong>Colection:</strong> <%= @comic.colection %></h6>
+           </div>
+          </div>
+        </div>
+        <br>
+<div class="row d-flex justify-content-center">
+   <div class="d-flex flex-wrap-nowrap">
+      <%= link_to "Delete",
                     user_comic_path(current_user.id, @comic), class: "btn btn-ghost-danger",
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
                     <%= link_to "Update", edit_user_comic_path(current_user.id, @comic), class: "btn btn-ghost" %></button>
                     <%= link_to "Loan", new_user_comic_loan_path(current_user.id, @comic, @loan), :"data-turbolinks" => false, class: "btn btn-ghost" %></button>
-                </div>
-             </div>
-             </div>
-        </div>
+      </div>
+    </div>
+
+<br>
          <div class="container mt-2">
            <div class="row d-flex justify-content-center">
              <div class="col-align-self-center">
