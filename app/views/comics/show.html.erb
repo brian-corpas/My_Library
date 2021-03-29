@@ -8,7 +8,7 @@
           <div class="row no-gutters">
            <div class="col-md-4">
         <% if @comic.photo.attached? %>
-           <div class="card-img-top d-flex justify-content-left mt-3 mb-2" style="margin-top: 5%"><%= cl_image_tag @comic.photo.key, height: 350, width: 250, crop: :fill %></div>
+           <div class="card-img-top d-flex justify-content-left mt-3 mb-2" style="margin-top: 5%"><%= cl_image_tag @comic.photo.key, height: 380, width: 270, crop: :thumb %></div>
         <% end %>
         </div>
        </div>
