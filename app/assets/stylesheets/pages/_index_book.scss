@@ -1,3 +1,5 @@
+
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -30,4 +32,35 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+
+*{
+  margin: 0;
+}
+.colorchange{
+  
+  width: 100vw;
+  height: 100vh;
+  animation: colorloop 10s linear infinite;
+}
+.inverter {
+  font-family: Helvetica, sans-serif;
+  font-size: calc(4vh + 3.5vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	background: inherit;
+	-webkit-background-clip: text;
+					background-clip: text;
+	color: transparent;
+	filter: invert(1) grayscale(1) contrast(10);
+}
+
+@keyframes colorloop {
+    0%		{background: #1f441e;}
+  	50%		{background: #c8c6a7;}
+  	100%	{background: #1f441e;}
+}
+
 
