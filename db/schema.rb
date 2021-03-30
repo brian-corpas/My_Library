@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_201808) do
+ActiveRecord::Schema.define(version: 2021_03_30_164431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2021_03_27_201808) do
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
+  create_table "comicloans", force: :cascade do |t|
+    t.string "name"
+    t.string "date"
+    t.bigint "comic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comic_id"], name: "index_comicloans_on_comic_id"
+  end
+
   create_table "comics", force: :cascade do |t|
     t.string "title"
     t.string "colection"
@@ -56,6 +65,15 @@ ActiveRecord::Schema.define(version: 2021_03_27_201808) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_comics_on_user_id"
+  end
+
+  create_table "loan_comics", force: :cascade do |t|
+    t.string "name"
+    t.string "date"
+    t.bigint "comic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comic_id"], name: "index_loan_comics_on_comic_id"
   end
 
   create_table "loans", force: :cascade do |t|
@@ -119,7 +137,9 @@ ActiveRecord::Schema.define(version: 2021_03_27_201808) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "users"
+  add_foreign_key "comicloans", "comics"
   add_foreign_key "comics", "users"
+  add_foreign_key "loan_comics", "comics"
   add_foreign_key "loans", "books"
   add_foreign_key "taggings", "tags"
 end

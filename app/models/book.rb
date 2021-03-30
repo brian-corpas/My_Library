@@ -7,7 +7,7 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
 
-  self.per_page = 12
+ 
 
   include PgSearch::Model
 
