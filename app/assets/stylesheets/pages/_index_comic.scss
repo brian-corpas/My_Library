@@ -1,25 +1,27 @@
-.sky {
-    position:absolute;
-    background-repeat: repeat;
-    width:100%;
-    background: #4B79A1;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #283E51, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #283E51, #0A2342); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: -olinear-gradient(to top, #283E51, #0A2342); 
-    height: 100vh;
-  }
-  
-  .stars {
-    position:absolute;
-    background-repeat: repeat;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    display:block;
-    background:url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-    z-index:0;
-  }
-  
+*{
+  margin: 0;
+}
+.colorchange2{
+  width: 100vw;
+  height: 100vh;
+  animation: colorloop2 10s linear infinite;
+}
+.inverter {
+  font-family: Helvetica, sans-serif;
+  font-size: calc(4vh + 3.5vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	background: inherit;
+	-webkit-background-clip: text;
+					background-clip: text;
+	color: transparent;
+	filter: invert(1) grayscale(1) contrast(10);
+}
+
+@keyframes colorloop2 {
+    0%		{background: #d49d42;}
+  	50%		{background: black;}
+  	100%	{background: #d49d42;}
+}
