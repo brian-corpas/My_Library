@@ -21,7 +21,7 @@
                 </div>
                 <div class="d-flex justify-content-center">
                   <%= link_to "Delete Loan",
-                  user_comic_comicloan_path(current_user.id, :comic_id, :comicloan_id), class: "btn btn-ghost-danger",
+                  user_comic_comicloan_path(current_user.id, :comic_id, comicloan), class: "btn btn-ghost-danger",
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
                 </div>
