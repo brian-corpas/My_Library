@@ -28,7 +28,7 @@
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
                     <%= link_to "Update", edit_user_comic_path(current_user.id, @comic), class: "btn btn-ghost" %></button>
-                    <%= link_to "Loan", new_user_comic_loan_path(current_user.id, @comic, @loan), :"data-turbolinks" => false, class: "btn btn-ghost" %></button>
+                    <%= link_to "Loan", new_user_comic_comicloan_path(current_user.id, @comic, @comicloan), :"data-turbolinks" => false, class: "btn btn-ghost" %></button>
       </div>
     </div>
 
