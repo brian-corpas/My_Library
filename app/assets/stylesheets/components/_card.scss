@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  animation: fadeIn;
+  animation-duration: 5s;
 }
 
 @media(max-width: 992px) {
