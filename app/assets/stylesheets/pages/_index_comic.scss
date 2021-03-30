@@ -4,7 +4,7 @@
 .colorchange2{
   width: 100vw;
   height: 100vh;
-  animation: colorloop 10s linear infinite;
+  animation: colorloop2 10s linear infinite;
 }
 .inverter {
   font-family: Helvetica, sans-serif;
@@ -20,7 +20,7 @@
 	filter: invert(1) grayscale(1) contrast(10);
 }
 
-@keyframes colorloop {
+@keyframes colorloop2 {
     0%		{background: #d49d42;}
   	50%		{background: black;}
   	100%	{background: #d49d42;}
