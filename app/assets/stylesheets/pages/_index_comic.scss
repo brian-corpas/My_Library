@@ -2,26 +2,7 @@
   margin: 0;
 }
 .colorchange2{
-  width: 100vw;
-  height: 100vh;
-  animation: colorloop2 10s linear infinite;
-}
-.inverter {
-  font-family: Helvetica, sans-serif;
-  font-size: calc(4vh + 3.5vw);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-	background: inherit;
-	-webkit-background-clip: text;
-					background-clip: text;
-	color: transparent;
-	filter: invert(1) grayscale(1) contrast(10);
-}
-
-@keyframes colorloop2 {
-    0%		{background: #d49d42;}
-  	50%		{background: black;}
-  	100%	{background: #d49d42;}
+  background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
 }
