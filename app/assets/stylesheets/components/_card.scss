@@ -1,11 +1,15 @@
+.bookcards_show {
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
 .bookcards {
   margin-top: 10%;
   margin-left: 3%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  animation: fadeIn;
-  animation-duration: 5s;
+  
 }
 
 @media(max-width: 992px) {
