@@ -1,4 +1,4 @@
-<body class="colorchange">
+<body class="colorchange3">
   <div class="bookcards">
       <% @books.order('title ASC').each do |book| %>
             <div class="card mb-3" style="max-width: 540px;">
@@ -30,7 +30,7 @@
   <div class="row d-flex justify-content-center">
     <div class="col-align-self-center">
       <div style="margin-top: 20%">
-            <%= link_to "Back", root_path, class: "btn btn-outline-secondary"%>
+            <%= link_to "Back", root_path, class: "btn btn-outline-light"%>
       </div>
     </div>
   </div>
