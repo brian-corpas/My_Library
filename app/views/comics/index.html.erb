@@ -7,7 +7,10 @@
               <div class="row no-gutters">
                 <div class="col-md-4">
                   <% if comic.photo.attached? %>
-                    <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag comic.photo.key, height: 200, width: 140, crop: :thumb %></div>
+                    <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag comic.photo.key, height: 200, width: 135, crop: :thumb %></div>
+                    <% else %>
+                    <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
+                    </div>
                   <% end %>
                 </div>
                 <div class="col-md-8">
@@ -18,7 +21,6 @@
                   </div>
                 </div>
               </div>
-
              </div>
              </div>
             <% end %>

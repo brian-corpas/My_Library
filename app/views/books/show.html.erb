@@ -6,6 +6,9 @@
            <div class="col-md-4">
         <% if @book.photo.attached? %>
            <div class="card-img-top d-flex justify-content-left mt-3 mb-2" style="margin-top: 5%"><%= cl_image_tag @book.photo.key, height: 380, width: 270, crop: :fill %></div>
+           <% else %>
+              <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
+              </div>
         <% end %>
         </div>
        </div>
