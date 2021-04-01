@@ -21,23 +21,39 @@
 @media only screen and (max-width: 768px) {
   .bookcards {
     display: grid;
-    grid-template-columns: 1fr;
-    padding: 3em;
-    grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+    grid-row-gap: 20px;
+  }
+  .backgroundcard {
+    background-color: lightgrey;
+    background-image: linear-gradient(lightgrey, white);
+  }
+  
+  .card-title {
+    font-size: small;
+    margin-top: 10%;
+  }
+  .card-text {
+    font-size: small;
+    margin-top: 10%;;
   }
   .card-img-top {
   display: flex;
   justify-content: center;
-}
 
-.bookcards_show {
+  }
+
+
+  .bookcards_show {
    grid-template-columns: 1fr;
    padding: 2em;
    grid-row-gap: 30px;
-}
+  }
 }
 
 .backgroundcard {
-  background-image: linear-gradient(to bottom right, lightgrey, white);
+  background-color: lightgrey;
+    background-image: linear-gradient(lightgrey, white);
 }
 
