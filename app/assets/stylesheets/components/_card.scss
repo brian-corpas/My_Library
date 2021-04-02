@@ -12,6 +12,26 @@
   
 }
 
+
+.card-info {
+  .card-text {
+    color: black;
+  }
+  color: black;
+}
+
+.bookcards_show .card-title {
+  color: lightgrey;
+}
+
+.card-text {
+  color: lightgrey;
+}
+
+.commentbox {
+  color: lightgrey;
+}
+
 @media(max-width: 992px) {
   .bookcards {
     grid-template-columns: 1fr 1fr;
