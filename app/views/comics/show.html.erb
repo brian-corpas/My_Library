@@ -1,5 +1,5 @@
 
-  <body class="page_background">
+  <body class="colorchange2">
   
  
  <div class="bookcards_show">
@@ -7,7 +7,7 @@
           <div class="row no-gutters">
            <div class="col-md-4">
         <% if @comic.photo.attached? %>
-           <div class="card-img-top d-flex justify-content-left mt-3 mb-2" style="margin-top: 5%"><%= cl_image_tag @comic.photo.key, height: 380, width: 270, crop: :thumb %></div>
+           <div class="card-img-top d-flex justify-content-left mt-3 mb-2" style="margin-top: 5%"><%= cl_image_tag @comic.photo.key, height: 390, width: 270, crop: :thumb %></div>
            <% else %>
             <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
             </div>
@@ -24,18 +24,19 @@
           </div>
         </div>
         <br>
-<div class="row d-flex justify-content-center">
-   <div class="d-flex flex-wrap-nowrap">
-      <%= link_to "Delete",
-                    user_comic_path(current_user.id, @comic), class: "btn btn-ghost-danger",
+               <div class="d-flex justify-content-center">
+                  <div class="flex-sm-row">
+                  <%= link_to "Delete",
+                    user_comic_path(current_user.id, @comic), class: "btn btn-outline-danger",
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
-                    <%= link_to "Update", edit_user_comic_path(current_user.id, @comic), class: "btn btn-ghost" %></button>
-                    <%= link_to "Loan", new_user_comic_comicloan_path(current_user.id, @comic, @comicloan), :"data-turbolinks" => false, class: "btn btn-ghost" %></button>
-      </div>
-    </div>
+                    <%= link_to "Update", edit_user_comic_path(current_user.id, @comic), class: "btn btn-outline-info" %></button>
+                    <%= link_to "Loan", new_user_comic_comicloan_path(current_user.id, @comic, @comicloan), :"data-turbolinks" => false, class: "btn btn-outline-info" %></button>
+                  </div>
+                </div>
 
 <br>
+       <div class="commentbox">
          <div class="container mt-2">
            <div class="row d-flex justify-content-center">
              <div class="col-align-self-center">
@@ -45,6 +46,7 @@
                <% else %>
                  <h5>To leave a comment, update comic information</h5>
               <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -60,7 +62,7 @@
   <div class="row d-flex justify-content-center">
     <div class="col-align-self-center">
       <div style="margin-top: 20%">
-            <%= link_to "Back", user_comics_path(current_user.id), class: "btn btn-outline-dark"%>
+            <%= link_to "Back", user_comics_path(current_user.id), class: "btn btn-outline-light"%>
       </div>
     </div>
   </div>

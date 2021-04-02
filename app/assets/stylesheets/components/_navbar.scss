@@ -10,6 +10,8 @@
 }
 
 
+
+
 #avatar {
   border-radius: 50%;
 }
@@ -54,7 +56,10 @@
 
 @media (max-width: 1222px) {
   .navbar-nav {
-    text-align: right;
+    flex-direction: row;
+    flex-wrap: nowrap;
+   justify-content: space-around;
+    //text-align: right;
     background-color: #f4f6ff;
     padding-right: 10px;
   }
