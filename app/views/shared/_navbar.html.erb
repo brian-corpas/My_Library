@@ -1,4 +1,8 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon">
+  
+            
+   
+
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars"></i>
@@ -9,8 +13,11 @@
        <ul class="navbar-nav mr-auto">
          <% if user_signed_in? %>
 
-
-          <ul class="nav navbar-nav navbar-right" style="margin-right: 5%">
+              <li class="nav-item active">
+                <%= link_to "Home", root_path, class: "nav-link" %>
+              </li>
+             
+          <ul class="nav navbar-nav navbar-right"  style="margin-left: 30px;">
                 <li class="nav-item dropdown navbar-avatar">
                 <%= image_tag "pileofbooks.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                
@@ -22,7 +29,7 @@
              </li>
           </ul>
 
-           <ul class="nav navbar-nav navbar-right" style="margin-right: 5%">
+           <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item dropdown navbar-avatar">
                 <%= image_tag "comicbooks.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                
@@ -39,11 +46,9 @@
 
 
 
-              <li class="nav-item active">
-                <%= link_to "Home", root_path, class: "nav-link" %>
-              </li>
+              
             
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right" style="margin-left: 30px;">
                 <li class="nav-item dropdown navbar-avatar">
                   <% if current_user.photo.present? %>
                       <%= cl_image_tag current_user.photo.key, height: 40, width: 50, crop: :thumb, gravity: :face, radius: :max, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
