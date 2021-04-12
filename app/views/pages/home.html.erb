@@ -14,7 +14,11 @@
 
 
   <div class="banner-container">
-   <h1>MY LIBRARY</h1>
+   <div class="wrapper">
+    <div class="typing-demo">
+      <h1>MY LIBRARY</h1>
+     </div>
+   </div>
    <br>
     <% if user_signed_in? %>
      <% if current_user.first_name.present? %>
@@ -25,12 +29,14 @@
       
    
       <br>
+      <div class="all_search_bar">
        <p>Books: <%= current_user.books.count %></p>
         <%= render "book_search_bar" %>
         <br>
         <br>
          <p>Comics: <%= current_user.comics.count %></p>
         <%= render "comic_search_bar" %>
+        </div>
         <% end %>
   </div>
 </div>
