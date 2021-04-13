@@ -1,0 +1,41 @@
+/* .wishlist_background {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .wishlist_background::after {
+    content: "";
+      background-image: url(https://images.unsplash.com/photo-1615598255772-be0e66beb31d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Ym9vayUyMHNob3BwaW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60);
+      
+      margin-top: -80px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      height: 60em;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: .2;
+  } */
+
+ 
+  *{
+    margin: 0;
+  }
+  .colorchange4{
+    
+    background-image: linear-gradient(#c7956d, #f2d974,#c7956d);
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    .wishlist_bookcard {
+   
+    grid-template-columns: 1fr;
+    padding: 2em;
+    grid-row-gap: 20px;
+    }
+  }
