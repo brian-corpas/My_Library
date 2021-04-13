@@ -8,6 +8,7 @@
       <div class="col-xs-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 p-0">
          <% @loans.order('created_at DESC').each do |loan| %>
           <div class="card mb-3" style="max-width: 540px;">
+          <div class="backgroundcard">
             <div class="row no-gutters">
               <div class="col-md-4">
                 <% if loan.book.photo.attached? %>
@@ -19,7 +20,7 @@
                 <div class="card-body">
                   <h4 class="card-title"><strong>Title:</strong> <%= loan.book.title %></h4>
                   <h5 class="card-title"><strong>Name:</strong> <%= loan.name %></h5>
-                  <p class="card-text"><strong>Loan date:</strong> <%= loan.date %></p>
+                  <p class="card-title"><strong>Loan date:</strong> <%= loan.date %></p>
                 </div>
                 <div class="d-flex justify-content-center">
                   <%= link_to "Delete Loan",
@@ -28,6 +29,7 @@
                   data: { confirm: "Are you sure?" } %>
                 </div>
               </div>
+             </div>
              </div>
             </div>
            <% end %>
