@@ -38,7 +38,8 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'activestorage-cloudinary-service'
 gem 'pg_search'
 gem 'will_paginate', '~> 3.3.0'
-
+gem 'letter_opener', group: :development
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'pry-byebug'
