@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'mylibrary@sapo.pt'
+  default from: 'contact@my-library.xyz'
   layout 'mailer'
 end
