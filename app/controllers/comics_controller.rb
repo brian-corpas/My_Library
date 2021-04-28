@@ -14,6 +14,7 @@ class ComicsController < ApplicationController
       format.csv { send_data @comics.to_csv }
       format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
+    @comics = Comic.paginate(page: params[:page])
   end
 
   def show

@@ -27,4 +27,6 @@ class Comic < ApplicationRecord
       end
     end
 
+    self.per_page = 12
+
 end
