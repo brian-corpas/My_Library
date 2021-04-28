@@ -8,6 +8,12 @@ class BooksController < ApplicationController
       @books = policy_scope(Book)
       @books = Book.search_by_full_name(params[:term])
     end
+    @books = Book.order(:title)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @books.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
+    end
   end
 
   def show
