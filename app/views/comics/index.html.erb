@@ -1,5 +1,14 @@
 <body class="colorchange2">
   
+<div class="export">
+<p>
+  Download:
+  <%= link_to "CSV", user_comics_path(format: "csv"), class: "btn btn-info" %> |
+  <%= link_to "Excel", user_comics_path(format: "xls"), class: "btn btn-info"  %>
+</p>
+</div>
+
+
   <div class="bookcards">
       <% @comics.order('title ASC').each do |comic| %>
             <div class="card mb-3" style="max-width: 540px;">
