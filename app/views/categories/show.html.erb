@@ -1,0 +1,7 @@
+<h3> Books under this category </h3>
+<% Book.where(category_id: @category.id).each do |book| %>
+<li> <%= book.title %> </li>
+<% end %>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

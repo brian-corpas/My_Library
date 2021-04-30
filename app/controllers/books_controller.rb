@@ -25,12 +25,14 @@ class BooksController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @book = Book.new
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
     authorize @book
   end
 
   def create
     @user = User.find(params[:user_id])
     @book = Book.new(book_params)
+    # @book.category_id = params[:category_id] 
     @book.user = @user
     authorize @book
     if @book.save
@@ -46,11 +48,13 @@ class BooksController < ApplicationController
   def edit
     @user = User.find(params[:user_id])
     @book = Book.find(params[:id])
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
     authorize @book
   end
 
   def update
     @book = Book.find(params[:id])
+    @book.category_id = params[:category_id]
     @book.update(book_params)
     authorize @book
     redirect_to user_book_path
@@ -66,6 +70,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :photo, :comments)
+    params.require(:book).permit(:title, :author, :photo, :comments, :category_id)
   end
 end
