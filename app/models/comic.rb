@@ -1,6 +1,6 @@
 class Comic < ApplicationRecord
   belongs_to :user
-  has_many :loans
+  has_many :comicloans
  
 
   has_one_attached :photo

@@ -12,6 +12,7 @@ class LoansController < ApplicationController
   end
 
   def create
+    
     @book = Book.find(params[:book_id]) 
     @loan = Loan.new(loan_params)
     @loan.book = @book 
