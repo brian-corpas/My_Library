@@ -18,8 +18,9 @@
 
  
 
-
-<%= link_to "Categories", categories_path %>
+<div class="categories_btn">
+  <%= link_to "Categories", categories_path, class: "btn btn-info btn-sm" %>
+</div>
 
   <div class="bookcards">
     <% current_user.books.order('title ASC').each do |book| %>
@@ -33,9 +34,7 @@
                     <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
                     </div>
                   <% end %>
-                   <% if book.category_id.present?  %> 
-                   <p><%= link_to Category.find(book.category_id).name, category_path(book.category_id) %></p>
-                   <% end %>
+                 
                 </div>
 
               

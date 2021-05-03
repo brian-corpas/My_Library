@@ -1,49 +1,56 @@
-<br>
-<br>
-<br>
-<h3> Books under this category </h3>
-<% Book.where(category_id: @category.id).each do |book| %>
-
+<body class="colorchange5">
+<div class="row d-flex justify-content-center" style="margin-top: 5%">
+  <div class="book_categories">
+    <h3> Books under this category </h3>
+  </div>
+</div>
  <div class="bookcards">
-            <div class="card mb-3" style="max-width: 540px;">
-             <div class="backgroundcard">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <% if book.photo.attached? %>
-                    <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag book.photo.key, height: 170, width: 120, crop: :thumb %></div>
-                    <% else %>
-                    <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
-                    </div>
-                  <% end %>
-                   <% if book.category_id.present?  %> 
-                   <p><%= link_to Category.find(book.category_id).name, category_path(book.category_id) %></p>
-                   <% end %>
-                </div>
+   <% Book.where(category_id: @category.id).each do |book| %>
+ 
+              <div class="card mb-3" style="max-width: 540px;">
+              <div class="backgroundcard">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <% if book.photo.attached? %>
+                      <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag book.photo.key, height: 170, width: 120, crop: :thumb %></div>
+                      <% else %>
+                      <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
+                      </div>
+                    <% end %>
+                    
+                  </div>
 
-              
-                <div class="col-md-8">
-                  <div class="card-body">
-                   <div class="card-info">
-                   <a href="<%= user_book_path(current_user.id, book) %>" class="stretched-link"></a>
-                    <h5 class="card-title"><strong>Title:</strong> <%= book.title %></h5>
-                    <p class="card-text"><strong>Author:</strong> <%= book.author %></p>
+                
+                  <div class="col-md-8">
+                    <div class="card-body">
+                    <div class="card-info">
+                    <a href="<%= user_book_path(current_user.id, book) %>" class="stretched-link"></a>
+                      <h5 class="card-title"><strong>Title:</strong> <%= book.title %></h5>
+                      <p class="card-text"><strong>Author:</strong> <%= book.author %></p>
 
-                    <% if book.category_id.present?  %> 
-                   <p><%= link_to Category.find(book.category_id).name, category_path(book.category_id) %></p>
-                   <% end %>
-
+                      </div>
                     </div>
                   </div>
+
                 </div>
-
               </div>
-             </div>
-             </div>
+              </div>
+          
          
-        </div>
+    <% end %>
+ </div>
 
+<%# <%= link_to 'Edit', edit_category_path(@category) %> 
 
-<% end %>
+<div class="container mt-2">
+  <div class="row d-flex justify-content-center">
+    <div class="col-align-self-center">
+      <div style="margin-top: 20%">
+            <%= link_to "Back", user_books_path(current_user.id), class: "btn btn-dark"%>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
- <%= link_to "Back", user_books_path(current_user.id)%>
+</body>

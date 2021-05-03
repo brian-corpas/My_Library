@@ -44,5 +44,14 @@
 <div class="row d-flex justify-content-center" style="margin-top: 5%">
   <%= link_to 'New Category', new_category_path, class: "btn btn-info" %>
 </div>
+<div class="container mt-2">
+  <div class="row d-flex justify-content-center">
+    <div class="col-align-self-center">
+      <div style="margin-top: 20%">
+            <%= link_to "Back", user_books_path(current_user.id), class: "btn btn-dark"%>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
