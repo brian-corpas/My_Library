@@ -21,6 +21,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    authorize @category
   end
 
   # POST /categories
