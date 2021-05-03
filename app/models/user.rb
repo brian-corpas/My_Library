@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email
 
-
+  
   has_many :books
   has_many :comics
   has_many :wishlists

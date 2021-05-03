@@ -4,8 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
-    authorize @category
+    @categories = policy_scope(Category)
   end
 
   # GET /categories/1
