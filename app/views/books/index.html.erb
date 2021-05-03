@@ -14,12 +14,19 @@
 </p>
 </div>
 
+
+
 <div class="pagination">
     <div class="digg_pagination">
       <%= will_paginate @books %>
     </div>
 </div>
 
+ 
+
+<div class="categories_btn">
+  <%= link_to "Categories", categories_path, class: "btn btn-info btn-sm" %>
+</div>
 
   <div class="bookcards">
     <% current_user.books.order('title ASC').each do |book| %>
@@ -33,6 +40,7 @@
                     <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
                     </div>
                   <% end %>
+                 
                 </div>
 
               
@@ -42,6 +50,9 @@
                    <a href="<%= user_book_path(current_user.id, book) %>" class="stretched-link"></a>
                     <h5 class="card-title"><strong>Title:</strong> <%= book.title %></h5>
                     <p class="card-text"><strong>Author:</strong> <%= book.author %></p>
+
+                   
+
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :user
   has_many :loans
+  belongs_to :category
 
   has_one_attached :photo
 

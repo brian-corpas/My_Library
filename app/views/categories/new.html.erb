@@ -1,0 +1,22 @@
+<body class="colorchange5">
+
+<div class="row d-flex justify-content-center">
+  <div class="book_categories">
+    <h3>NEW CATEGORY</h3>
+  </div>
+</div>
+  
+
+<%= render 'form', category: @category %>
+
+<div class="container mt-2">
+  <div class="row d-flex justify-content-center">
+    <div class="col-align-self-center">
+      <div style="margin-top: 20%">
+            <%= link_to "Back", categories_path, class: "btn btn-dark"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
