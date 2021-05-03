@@ -22,7 +22,7 @@
 <%= link_to "Categories", categories_path %>
 
   <div class="bookcards">
-    <% @books.order('title ASC').each do |book| %>
+    <% current_user.books.order('title ASC').each do |book| %>
             <div class="card mb-3" style="max-width: 540px;">
              <div class="backgroundcard">
               <div class="row no-gutters">
