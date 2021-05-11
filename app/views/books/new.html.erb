@@ -9,7 +9,7 @@
               <%= simple_form_for [@user, @book] do |f| %>
                 <%= f.input :title, label: "TITLE" %>
                 <%= f.input :author, label: "AUTHOR"%>
-                <%= f.input :category_id, as: :select, collection: @categories%>
+                
 
               <div class="cover-preview">
                 <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload book cover' %>
