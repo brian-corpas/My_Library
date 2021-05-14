@@ -41,6 +41,8 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'letter_opener', group: :development
 gem 'postmark-rails'
+gem "activerecord", ">= 6.0.3.5"
+gem "actionpack", ">= 6.0.3.7"
 
 group :development, :test do
   gem 'pry-byebug'
