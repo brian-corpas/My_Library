@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  include PgSearch::Model
   belongs_to :user
   has_many :loans
   
@@ -8,11 +9,9 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
 
- 
 
-  include PgSearch
 
-  pg_search_scope :search_by_full_name, against: [:title, :author],
+  pg_search_scope :search_by_full_name, :against => [:title, :author],
     using: {
       tsearch: {
         prefix: true

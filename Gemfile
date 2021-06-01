@@ -36,7 +36,7 @@ gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'activestorage-cloudinary-service'
-gem 'pg_search'
+gem 'pg_search', '~> 2.3', '>= 2.3.5'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'letter_opener', group: :development

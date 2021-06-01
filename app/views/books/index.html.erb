@@ -6,14 +6,6 @@
 <br>
 <br>
 
-<div class="pagination">
-    <div class="digg_pagination">
-      <%= will_paginate @books %>
-    </div>
-</div>
-
-
-
   <div class="bookcards">
     <% current_user.books.order('title ASC').each do |book| %>
             <div class="card mb-3" style="max-width: 540px;">

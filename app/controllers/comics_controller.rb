@@ -3,16 +3,11 @@ class ComicsController < ApplicationController
 
   def index
     unless params[:term].present?
+      @comics = Comic.all
       @comics = policy_scope(Comic)
     else
-      @comics = policy_scope(Comic)
       @comics = Comic.search_by_full_name(params[:term])
-    end
-    @comics = Comic.order(:title)
-    respond_to do |format|
-      format.html
-      format.csv { send_data @comics.to_csv }
-      format.xls # { send_data @products.to_csv(col_sep: "\t") }
+      @comics = policy_scope(Comic)
     end
     @comics = Comic.paginate(page: params[:page])
   end
