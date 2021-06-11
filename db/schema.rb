@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_114345) do
+ActiveRecord::Schema.define(version: 2021_05_14_180600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_114345) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "loan_status", default: "home"
     t.string "comments"
-    t.string "category_id"
-    t.string "—force"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -54,6 +52,8 @@ ActiveRecord::Schema.define(version: 2021_04_29_114345) do
     t.text "desc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "comicloans", force: :cascade do |t|
@@ -76,15 +76,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_114345) do
     t.index ["user_id"], name: "index_comics_on_user_id"
   end
 
-  create_table "loan_comics", force: :cascade do |t|
-    t.string "name"
-    t.string "date"
-    t.bigint "comic_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["comic_id"], name: "index_loan_comics_on_comic_id"
-  end
-
   create_table "loans", force: :cascade do |t|
     t.string "name"
     t.string "date"
@@ -92,15 +83,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_114345) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_loans_on_book_id"
-  end
-
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text "content"
-    t.string "searchable_type"
-    t.bigint "searchable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -128,9 +110,9 @@ ActiveRecord::Schema.define(version: 2021_04_29_114345) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "users"
+  add_foreign_key "categories", "users"
   add_foreign_key "comicloans", "comics"
   add_foreign_key "comics", "users"
-  add_foreign_key "loan_comics", "comics"
   add_foreign_key "loans", "books"
   add_foreign_key "wishlists", "users"
 end

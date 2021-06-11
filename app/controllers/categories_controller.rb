@@ -27,8 +27,8 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    authorize @category
     @category = Category.new(category_params)
+    authorize @category
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }

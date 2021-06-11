@@ -2,19 +2,13 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    unless params[:term].present?
+    if params[:term].present? 
+      @books = Book.search_by_full_name(params[:term])
       @books = policy_scope(Book)
     else
+      @books = Book.all
       @books = policy_scope(Book)
-      @books = Book.search_by_full_name(params[:term])
-    end
-    @books = Book.order(:title)
-    respond_to do |format|
-      format.html
-      format.csv { send_data @books.to_csv }
-      format.xls # { send_data @products.to_csv(col_sep: "\t") }
-    end
-    @books = Book.paginate(page: params[:page])
+    end 
   end
 
   def show
@@ -25,14 +19,12 @@ class BooksController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @book = Book.new
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
     authorize @book
   end
 
   def create
     @user = User.find(params[:user_id])
     @book = Book.new(book_params)
-    # @book.category_id = params[:category_id] 
     @book.user = @user
     authorize @book
     if @book.save
@@ -48,13 +40,11 @@ class BooksController < ApplicationController
   def edit
     @user = User.find(params[:user_id])
     @book = Book.find(params[:id])
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
     authorize @book
   end
 
   def update
     @book = Book.find(params[:id])
-    @book.category_id = params[:category_id]
     @book.update(book_params)
     authorize @book
     redirect_to user_book_path
@@ -70,6 +60,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :photo, :comments, :category_id)
+    params.require(:book).permit(:title, :author, :photo, :comments)
   end
 end
