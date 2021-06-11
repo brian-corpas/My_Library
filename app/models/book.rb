@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  include PgSearch::Model
+ 
   belongs_to :user
   has_many :loans
   
@@ -9,7 +9,7 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
 
-
+  include PgSearch::Model
 
   pg_search_scope :search_by_full_name, :against => [:title, :author],
     using: {
@@ -17,9 +17,5 @@ class Book < ApplicationRecord
         prefix: true
       }
     }
-
-    self.per_page = 2
-
-    
 
 end

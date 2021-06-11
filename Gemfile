@@ -43,6 +43,7 @@ gem 'letter_opener', group: :development
 gem 'postmark-rails'
 gem "activerecord", ">= 6.0.3.5"
 gem "actionpack", ">= 6.0.3.7"
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 group :development, :test do
   gem 'pry-byebug'
