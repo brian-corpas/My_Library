@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_14_180600) do
+ActiveRecord::Schema.define(version: 2021_06_24_095602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(version: 2021_05_14_180600) do
     t.string "loan_status", default: "home"
     t.string "comments"
     t.index ["user_id"], name: "index_books_on_user_id"
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.text "desc"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "comicloans", force: :cascade do |t|
@@ -110,7 +101,6 @@ ActiveRecord::Schema.define(version: 2021_05_14_180600) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "users"
-  add_foreign_key "categories", "users"
   add_foreign_key "comicloans", "comics"
   add_foreign_key "comics", "users"
   add_foreign_key "loans", "books"
