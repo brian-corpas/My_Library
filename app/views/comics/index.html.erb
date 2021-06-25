@@ -8,11 +8,6 @@
 </p>
 </div>
 
-<div class="pagination">
-    <div class="digg_pagination">
-      <%= will_paginate @comics %>
-    </div>
-</div>
 
   <div class="bookcards">
       <% current_user.comics.order('title ASC').each do |comic| %>

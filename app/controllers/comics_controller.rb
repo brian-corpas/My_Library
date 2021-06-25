@@ -9,7 +9,7 @@ class ComicsController < ApplicationController
       @comics = Comic.search_by_full_name(params[:term])
       @comics = policy_scope(Comic)
     end
-    @comics = Comic.paginate(page: params[:page])
+    @comics = Comic.all
   end
 
   def show
