@@ -9,14 +9,7 @@ class Comic < ApplicationRecord
   validates :colection, presence: true
 
 
-  include PgSearch::Model
 
-  pg_search_scope :search_by_full_name, against: [:title, :colection],
-    using: {
-      tsearch: {
-        prefix: true
-      }
-    }
 
     def self.to_csv(options = {})
       CSV.generate(options) do |csv|
