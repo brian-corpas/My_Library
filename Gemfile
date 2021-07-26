@@ -36,7 +36,6 @@ gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'activestorage-cloudinary-service'
-gem 'pg_search'
 gem 'letter_opener', group: :development
 gem 'postmark-rails'
 gem "activerecord", ">= 6.0.3.5"

@@ -2,14 +2,8 @@ class ComicsController < ApplicationController
     before_action :authenticate_user!
 
   def index
-    unless params[:term].present?
-      @comics = Comic.all
-      @comics = policy_scope(Comic)
-    else
-      @comics = Comic.search_by_full_name(params[:term])
-      @comics = policy_scope(Comic)
-    end
     @comics = Comic.all
+    @comics = policy_scope(Comic)    
   end
 
   def show
