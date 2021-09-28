@@ -9,6 +9,7 @@ class User < ApplicationRecord
   
   has_many :books
   has_many :comics
+  has_many :records
   has_many :wishlists
   has_many :loans, through: :books
   has_many :comicloans, through: :comics

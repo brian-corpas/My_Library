@@ -1,0 +1,91 @@
+.card-product {
+    overflow: hidden;
+    height: 120px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .card-product img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  
+  .card-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-product p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  
+  .card-product .card-product-infos {
+    padding: 16px;
+  }
+  
+  
+  *{
+    margin: 0;
+  }
+  /* .colorchange{
+    
+    width: 100vw;
+    height: 100vh;
+    animation: colorloop 10s linear infinite;
+  }
+  .inverter {
+    font-family: Helvetica, sans-serif;
+    font-size: calc(4vh + 3.5vw);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+      background: inherit;
+      -webkit-background-clip: text;
+                      background-clip: text;
+      color: transparent;
+      filter: invert(1) grayscale(1) contrast(10);
+  }
+  
+  @keyframes colorloop {
+      0%		{background: #1f441e;}
+        50%		{background: #c8c6a7;}
+        100%	{background: #1f441e;}
+  }
+   */
+  
+  
+   .colorchange7{
+    background: radial-gradient(#F0A500 15%, transparent 16%) 0 0, radial-gradient(#F0A500 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:black;
+    background-size:16px 16px;
+  }
+  
+  .bookcards {
+    color: black;
+  }
+  
+  .export {
+     p {
+       color: white;
+       font-weight: bold;
+     }
+    margin-left: 3%;
+    margin-top: 70px;
+    z-index: 9999;
+  }
+  
+  .pagination {
+    z-index: 9999;
+    justify-content: center;
+   
+  }

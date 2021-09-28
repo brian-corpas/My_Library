@@ -1,0 +1,41 @@
+<body class="colorchange7">
+<br>
+<br>
+<br>
+
+<div class="bookcards">
+    <% current_user.records.order('artist ASC').each do |record| %>
+            <div class="card mb-3" style="max-width: 540px;">
+             <div class="backgroundcard">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <% if record.photo.attached? %>
+                    <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag record.photo.key, height: 170, width: 120, crop: :thumb %></div>
+                    <% else %>
+                    <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= image_tag 'bookcovernot.png' %>
+                    </div>
+                  <% end %>
+                  
+                </div>
+
+              
+                <div class="col-md-8">
+                  <div class="card-body">
+                   <div class="card-info">
+                   <a href="<%= user_record_path(current_user.id, record) %>" class="stretched-link"></a>
+                    <h5 class="card-title"><strong>Title:</strong> <%= record.title %></h5>
+                    <p class="card-text"><strong>Artist:</strong> <%= record.artist %></p>
+
+                   
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+             </div>
+             </div>
+            <% end %>
+        </div>
+
+</body>
