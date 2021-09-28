@@ -1,0 +1,43 @@
+<div class="update_record_background">
+<div class="update_book">
+<div class="container">
+  <div class="row w-100">
+    <div class="col-xs-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 p-0">
+      <div class="form-login">
+       <h3 style="text-align: center;">UPDATE RECORD</h3>
+    <%= simple_form_for [@user, @record] do |f| %>
+      <%= f.input :title, label: "TITLE" %>
+      <%= f.input :artist, label: "ARTIST"%>
+
+      <div class="cover-preview">
+      <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload record cover' %>
+      <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
+     </div>
+
+    
+
+      <%= f.input :info, :as => :text, label: "Leave your notes on the record here", input_html: {style: 'height:100px;'} %>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-align-self-center">
+          <div style="margin-top: 20%">
+             <%= f.button :submit, "Submit", class: "btn btn-outline-success" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+      <div class="container mt-2">
+        <div class="row d-flex justify-content-center">
+          <div class="col-align-self-center">
+            <div style="margin-top: 15%">
+                  <%= link_to "Back", user_record_path, class: "btn btn-outline-dark"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+</div>
+</div>
