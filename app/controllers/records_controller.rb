@@ -7,9 +7,8 @@ class RecordsController < ApplicationController
     end
   
     def show
+      @record = Record.find(params[:id])
       authorize @record
-      @records = Record.find(params[:id])
-      
     end
   
     def new
