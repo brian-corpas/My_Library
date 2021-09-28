@@ -1,9 +1,10 @@
+<body class="colorchange7">
 <br>
 <br>
 <br>
 
 <div class="bookcards">
-    <% current_user.records.order('title ASC').each do |record| %>
+    <% current_user.records.order('artist ASC').each do |record| %>
             <div class="card mb-3" style="max-width: 540px;">
              <div class="backgroundcard">
               <div class="row no-gutters">
@@ -36,3 +37,5 @@
              </div>
             <% end %>
         </div>
+
+</body>
