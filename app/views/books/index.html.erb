@@ -6,6 +6,13 @@
 <br>
 <br>
 
+<div class="csv">
+    <p>
+      <h6>Download:</h6>
+      <%= link_to "CSV", user_books_path(format: "csv"), class: "btn btn-outline-info btn-sm" %> |
+      <%= link_to "Excel", user_books_path(format: "xls"), class: "btn btn-outline-info btn-sm" %>
+    </p>
+</div>
 
   <div class="bookcards">
     <% current_user.books.order('title ASC').each do |book| %>

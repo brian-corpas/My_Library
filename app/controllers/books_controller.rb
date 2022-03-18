@@ -2,6 +2,12 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @books = Book.order(:title)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @books.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
+    end
       @books = Book.all
       @books = policy_scope(Book)
   end
