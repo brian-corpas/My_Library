@@ -22,6 +22,7 @@ class WishlistsController < ApplicationController
           flash[:notice] = 'Please enter wishlist info again!'
         end
       end
+
     
       def destroy
         @wishlist = Wishlist.find(params[:id])
